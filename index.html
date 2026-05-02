@@ -1,0 +1,368 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>For Baccha 💖</title>
+
+<style>
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+scroll-behavior:smooth;
+font-family: 'Segoe UI', sans-serif;
+}
+
+body{
+background:linear-gradient(135deg,#ffe6ef,#fff,#fff0f5);
+overflow-x:hidden;
+color:#444;
+}
+
+/* floating hearts */
+.floating span{
+position:fixed;
+bottom:-50px;
+font-size:24px;
+animation:float 10s linear infinite;
+opacity:.75;
+z-index:0;
+}
+@keyframes float{
+0%{transform:translateY(0) rotate(0deg);}
+100%{transform:translateY(-110vh) rotate(360deg);}
+}
+
+/* sections */
+section{
+min-height:100vh;
+display:flex;
+justify-content:center;
+align-items:center;
+flex-direction:column;
+padding:30px 20px;
+text-align:center;
+position:relative;
+z-index:2;
+}
+
+.card{
+background:rgba(255,255,255,.72);
+backdrop-filter:blur(14px);
+padding:35px;
+border-radius:26px;
+box-shadow:0 12px 30px rgba(0,0,0,.08);
+max-width:850px;
+width:100%;
+}
+
+h1{
+font-size:3rem;
+color:#ff4f81;
+margin-bottom:12px;
+}
+
+h2{
+font-size:1.4rem;
+color:#b45c79;
+margin-bottom:15px;
+}
+
+p{
+font-size:1.1rem;
+line-height:1.9;
+max-width:700px;
+margin:auto;
+}
+
+button{
+padding:14px 28px;
+border:none;
+border-radius:30px;
+font-size:1rem;
+cursor:pointer;
+margin:10px;
+transition:.3s;
+}
+
+.main-btn{
+background:#ff4f81;
+color:white;
+box-shadow:0 10px 20px rgba(255,79,129,.22);
+}
+.main-btn:hover{
+transform:translateY(-3px);
+}
+
+/* typing */
+#typing{
+font-size:2rem;
+color:#ff4f81;
+min-height:70px;
+font-weight:bold;
+}
+
+/* gallery */
+.gallery{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+gap:18px;
+margin-top:20px;
+}
+
+.gallery img{
+width:100%;
+height:300px;
+object-fit:cover;
+border-radius:18px;
+transition:.4s;
+box-shadow:0 10px 20px rgba(0,0,0,.08);
+}
+.gallery img:hover{
+transform:scale(1.05);
+}
+
+/* proposal */
+#proposalBox{
+position:relative;
+height:220px;
+max-width:600px;
+width:100%;
+margin:auto;
+}
+
+#yesBtn{
+background:#ff4f81;
+color:#fff;
+}
+
+#noBtn{
+position:absolute;
+left:55%;
+top:110px;
+background:#eee;
+color:#444;
+}
+
+#success{
+display:none;
+font-size:2rem;
+color:#ff4f81;
+margin-top:20px;
+animation:pop .7s ease;
+}
+
+@keyframes pop{
+from{transform:scale(.4);opacity:0;}
+to{transform:scale(1);opacity:1;}
+}
+
+/* click sticker */
+.sticker{
+position:fixed;
+font-size:28px;
+animation:burst 1s ease forwards;
+pointer-events:none;
+z-index:999;
+}
+
+@keyframes burst{
+0%{opacity:1;transform:translateY(0) scale(1);}
+100%{opacity:0;transform:translateY(-100px) scale(1.8);}
+}
+
+@media(max-width:768px){
+h1{font-size:2.2rem;}
+#typing{font-size:1.5rem;}
+.gallery img{height:240px;}
+}
+</style>
+</head>
+
+<body>
+
+<!-- floating -->
+<div class="floating">
+<span style="left:8%;animation-delay:0s;">💖</span>
+<span style="left:22%;animation-delay:2s;">🌸</span>
+<span style="left:40%;animation-delay:4s;">💌</span>
+<span style="left:58%;animation-delay:1s;">😘</span>
+<span style="left:74%;animation-delay:3s;">✨</span>
+<span style="left:90%;animation-delay:5s;">💞</span>
+</div>
+
+<!-- intro -->
+<section>
+<div class="card">
+<div id="typing"></div>
+<button class="main-btn" onclick="playMusic();goNext('countdown')">Open 💖</button>
+</div>
+</section>
+
+<!-- countdown -->
+<section id="countdown">
+<div class="card">
+<h1>Since We Met 💞</h1>
+<h2>26 April 2026 • 9:51 PM</h2>
+<h2 id="timer"></h2>
+<button class="main-btn" onclick="goNext('letter')">Next 💌</button>
+</div>
+</section>
+
+<!-- letter -->
+<section id="letter">
+<div class="card">
+<h1>My Feelings for you My Love 💖</h1>
+
+<p>
+Baccha,<br><br>
+
+Maine kabhi nahi socha tha ki koi itni jaldi meri Life ka important hissa ban jayega.<br><br>
+
+26 April ki raat sirf ek normal chat nahi thi...  
+shayad meri life ke best chapter ki beginning thi.<br><br>
+
+Tumhari loyalty mujhe sukoon deti hai.  
+Tumhari maturity mujhe impress karti hai.  
+Tumhari presence mujhe khush karti hai.<br><br>
+
+Tumse baat karna meri aadat ban gayi hai...  
+aur tum me mujhe mera future dikh ta hai. feelings to itni hai ki ek latter me nhi bta skta 🥹<br><br>
+
+I love you. and i miss you a lot every time.  
+Will you be mine forever? 💖
+</p>
+
+<button class="main-btn" onclick="goNext('gallery')">Memories 📸</button>
+</div>
+</section>
+
+<!-- gallery -->
+<section id="gallery">
+<div class="card">
+<h1>Just look at you🤗🥰💞</h1>
+
+<div class="gallery">
+<img src="01.jpg">
+<img src="02.jpg">
+<img src="07.jpg">
+<img src="06.jpg">
+<img src="08.JPG">
+<img src="05.JPG">
+</div>
+
+<button class="main-btn" onclick="goNext('proposal')">Final Surprise 💖</button>
+</div>
+</section>
+
+<!-- proposal -->
+<section id="proposal">
+<div class="card">
+<h1>Baccha... 💖</h1>
+<h2>Will You Be Mine Forever?</h2>
+
+<div id="proposalBox">
+<button id="yesBtn">Yes 💖</button>
+<button id="noBtn">No 🙈</button>
+</div>
+
+<div id="success">
+Yayyyy 💖<br>
+Now you are officially mine 😘
+</div>
+</div>
+</section>
+
+<!-- music -->
+<audio id="music" loop>
+<source src="YOUR-PIANO-MUSIC-LINK.mp3" type="audio/mpeg">
+</audio>
+
+<script>
+
+/* typing effect */
+let text = [
+"Hey Baccha... 💖",
+"I made something special for you...",
+"Please watch till the end 😘"
+];
+let line=0,char=0;
+function type(){
+if(line<text.length){
+if(char<text[line].length){
+document.getElementById("typing").innerHTML += text[line].charAt(char);
+char++;
+setTimeout(type,70);
+}else{
+document.getElementById("typing").innerHTML += "<br>";
+line++; char=0;
+setTimeout(type,700);
+}
+}
+}
+type();
+
+/* music */
+function playMusic(){
+document.getElementById("music").play();
+}
+
+/* next */
+function goNext(id){
+document.getElementById(id).scrollIntoView({behavior:'smooth'});
+}
+
+/* countdown */
+function updateTimer(){
+let start = new Date("2026-04-26T21:51:00");
+let now = new Date();
+let diff = now - start;
+
+let days = Math.floor(diff/(1000*60*60*24));
+let hrs = Math.floor((diff/(1000*60*60))%24);
+let mins = Math.floor((diff/(1000*60))%60);
+
+document.getElementById("timer").innerHTML =
+days+" Days "+hrs+" Hours "+mins+" Minutes";
+}
+setInterval(updateTimer,1000);
+updateTimer();
+
+/* no button run */
+let noBtn=document.getElementById("noBtn");
+let count=0;
+
+function moveNo(){
+count++;
+noBtn.style.left=(Math.random()*250)+"px";
+noBtn.style.top=(Math.random()*130)+"px";
+
+if(count==2) noBtn.innerText="Baccha No 😘";
+if(count==4) noBtn.innerText="Think Again 😏";
+}
+noBtn.addEventListener("mouseover",moveNo);
+noBtn.addEventListener("click",moveNo);
+
+/* yes click */
+document.getElementById("yesBtn").onclick=function(){
+document.getElementById("success").style.display="block";
+document.getElementById("yesBtn").style.display="none";
+document.getElementById("noBtn").style.display="none";
+
+for(let i=0;i<35;i++){
+let s=document.createElement("div");
+s.className="sticker";
+s.innerHTML=["💖","🌸","💌","😘","✨","💞"][Math.floor(Math.random()*6)];
+s.style.left=Math.random()*100+"vw";
+s.style.top=Math.random()*100+"vh";
+document.body.appendChild(s);
+
+setTimeout(()=>s.remove(),1000);
+}
+};
+
+</script>
+
+</body>
+</html>
